@@ -7,12 +7,12 @@ public class Tema2Ejercicio29 {
     public static void main (String[] args){
         Random random = new Random();
         int numero = random.nextInt(100);
+        Scanner in = new Scanner(System.in);
 
         System.out.println("Cual es tu numero");
         int contador = 0;
 
         while (contador <= 5){
-            Scanner in = new Scanner(System.in);
             int num = in.nextInt();
 
             if (num == numero){

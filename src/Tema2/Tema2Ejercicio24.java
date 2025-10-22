@@ -10,13 +10,13 @@ public class Tema2Ejercicio24 {
         int aprobados = 0;
         int suspendidos = 0;
         while(nota > 0){
-            if (nota >= 5){
+            if (nota >= 5 && nota<=10){
                 aprobados++;
-                nota = in.nextInt();
+
             }else{
                 suspendidos++;
-                nota = in.nextInt();
             }
+            nota = in.nextInt();
         }
         System.out.println("Aprobados " + aprobados + " Suspendidos " + suspendidos);
     }

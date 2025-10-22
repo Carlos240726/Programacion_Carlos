@@ -8,7 +8,7 @@ public class Tema2Ejercicio30 {
         int operacion;
         boolean otra = true;
 
-        while (otra == true){
+        while (otra){
 
             System.out.println("Dame un numero");
             Scanner in = new Scanner(System.in);
