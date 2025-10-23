@@ -18,6 +18,10 @@ public class Tema2EjercicioPelea {
         int defensa_p2;
         int velocidad_p2;
 
+        Boolean equivalencia = false;
+        int rondas = 0;
+        int contador = 0;
+
         int bono;
         int num_random;
 
@@ -102,37 +106,204 @@ public class Tema2EjercicioPelea {
         System.out.println("Defensa:    " + defensa_p2);
         System.out.println("Velocidad:  " + velocidad_p2);
 
+        if (velocidad_p1 == velocidad_p2){
+            equivalencia = true;
+        }
+
         System.out.println("La batalla empieza");
 
         Random random = new Random();
         bono = random.nextInt(10);
-        num_random = random.nextInt(10);
 
-        dmg_p1 = ataque_p1 - (defensa_p2 * 30 /100) + bono;
-        dmg_p2 =  ataque_p2 - (defensa_p1 * 30 /100) + bono;
-
-        while (salud_p1 > 0 && salud_p2 > 0){
+        dmg_p1 = ataque_p1 - (defensa_p2 * 75 /100) + bono;
+        dmg_p2 =  ataque_p2 - (defensa_p1 * 75 /100) + bono;
 
             if (velocidad_p1 > velocidad_p2){
 
-                salud_p2 = salud_p2 - dmg_p1;
-                System.out.println("La vida restante de jugador 2 es" + salud_p2);
+                while (salud_p1 > 0 && salud_p2 > 0){
 
-                salud_p1 = salud_p1 - dmg_p2;
-                System.out.println("La vida restante de jugador 1 es" + salud_p1);
+                    rondas++;
+                    System.out.println("Ronda " + rondas);
+                    salud_p2 = salud_p2 - dmg_p1;
 
-            }else {
+                    if (salud_p2>0){
+                        System.out.println("La vida restante de jugador 2 es " + salud_p2);
+                    }
 
-                if (velocidad_p1 < velocidad_p2){
+                    if (salud_p2 < 0){
+
+                        salud_p2 = 0;
+
+                        System.out.println("La vide del jugador 2 es " + salud_p2 + " La vida del jugador uno es " + salud_p1);
+                        System.out.println("Gana jugador 1");
+
+                    break;}
 
                     salud_p1 = salud_p1 - dmg_p2;
-                    System.out.println("La vida restante de jugador 1 es" + salud_p1);
+
+
+                    if (salud_p1>0){
+                        System.out.println("La vida restante de jugador 1 es " + salud_p1);
+                    }
+
+                    if(rondas>contador){
+
+                        System.out.println("-------------------------------------------");
+                        contador++;
+
+                    }
+
+                    if (salud_p1 < 0){
+
+                        salud_p1 = 0;
+
+                        System.out.println("La vide del jugador 2 es " + salud_p2 + "La vida del jugador uno es " + salud_p1);
+                        System.out.println("Gana jugador 2");
+
+                        break;
+
+                    }
+                }
+            } else if (velocidad_p1 < velocidad_p2) {
+
+                while (salud_p1 > 0 && salud_p2 > 0) {
+
+                    rondas++;
+                    System.out.println("Rondas " + rondas);
+                    salud_p1 = salud_p1 - dmg_p2;
+
+                    if (salud_p1 > 0) {
+                        System.out.println("La vida restante de jugador 1 es " + salud_p1);
+                    }
+
+                    if (salud_p1 < 0) {
+
+                        salud_p1 = 0;
+
+                        System.out.println("La vide del jugador 2 es " + salud_p2 + " La vida del jugador uno es " + salud_p1);
+                        System.out.println("Gana jugador 2");
+
+                        break;
+                    }
 
                     salud_p2 = salud_p2 - dmg_p1;
-                    System.out.println("La vida restante de jugador 2 es" + salud_p2);
 
+                    if (salud_p2 > 0) {
+                        System.out.println("La vida restante de jugador 2 es " + salud_p2);
+                    }
+
+                    if(rondas>contador){
+
+                        System.out.println("-------------------------------------------");
+                        contador++;
+
+                    }
+
+                    if (salud_p2 < 0) {
+
+                        salud_p2 = 0;
+
+                        System.out.println("La vide del jugador 2 es " + salud_p2 + "La vida del jugador uno es " + salud_p1);
+                        System.out.println("Gana jugador 1");
+
+                        break;
+
+                    }
                 }
-            }
-        }
+            } else if (equivalencia){
+
+                    while (salud_p1 > 0 && salud_p2 > 0) {
+
+                        num_random = random.nextInt(10);
+                        if (num_random < 5) {
+
+                            rondas++;
+                            System.out.println("Rondas " + rondas);
+                            salud_p2 = salud_p2 - dmg_p1;
+
+                            if (salud_p2 > 0) {
+                                System.out.println("La vida restante de jugador 2 es " + salud_p2);
+                            }
+
+                            if (salud_p2 < 0) {
+
+                                salud_p2 = 0;
+
+                                System.out.println("La vide del jugador 2 es " + salud_p2 + " La vida del jugador uno es " + salud_p1);
+                                System.out.println("Gana jugador 1");
+
+                                break;
+                            }
+
+                            salud_p1 = salud_p1 - dmg_p2;
+
+                            if (salud_p1 > 0) {
+                                System.out.println("La vida restante de jugador 1 es " + salud_p2);
+                            }
+
+                            if(rondas>contador){
+
+                                System.out.println("-------------------------------------------");
+                                contador++;
+
+                            }
+
+                            if (salud_p1 < 0) {
+
+                                salud_p1 = 0;
+
+                                System.out.println("La vide del jugador 2 es " + salud_p2 + "La vida del jugador uno es " + salud_p1);
+                                System.out.println("Gana jugador 2");
+
+                                break;
+
+                            } else {
+
+                                rondas++;
+                                System.out.println("Rondas " + rondas);
+                                salud_p2 = salud_p2 - dmg_p1;
+
+                                if (salud_p2 > 0) {
+                                    System.out.println("La vida restante de jugador 2 es " + salud_p2);
+                                }
+
+                                if (salud_p2 < 0) {
+
+                                    salud_p2 = 0;
+
+                                    System.out.println("La vide del jugador 2 es " + salud_p2 + " La vida del jugador uno es " + salud_p1);
+                                    System.out.println("Gana jugador 1");
+
+                                    break;
+                                }
+
+                                salud_p1 = salud_p1 - dmg_p2;
+
+                                if (salud_p1 > 0) {
+                                    System.out.println("La vida restante de jugador 2 es " + salud_p2);
+                                }
+
+                                if(rondas>contador){
+
+                                    System.out.println("-------------------------------------------");
+                                    contador++;
+
+                                }
+
+                                if (salud_p1 < 0) {
+
+                                    salud_p1 = 0;
+
+                                    System.out.println("La vide del jugador 2 es " + salud_p2 + "La vida del jugador uno es " + salud_p1);
+                                    System.out.println("Gana jugador 2");
+
+                                    break;
+
+                                }
+                            }
+
+                        }
+                    }
+                }
     }
 }
