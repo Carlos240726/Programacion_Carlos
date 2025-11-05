@@ -50,7 +50,7 @@ public class Tema2EjercicioPelea {
             case 1:
                 if (eleccion_p1 == 1) ;
 
-                System.out.println("Jugador 1");
+                System.out.println("Jugador 1");  //Creacion de personaje
 
                 System.out.println("Dame tus puntos de salud");
                 salud_p1 = in.nextInt();
@@ -105,7 +105,7 @@ public class Tema2EjercicioPelea {
                 System.out.println("Velocidad:  " + velocidad_p1);
 
 
-            case 2:
+            case 2: //Predeterminados
                 if (eleccion_p1 == 2) {
                     System.out.println("Que personaje quieres?");
                     System.out.println("            Caballero       Mago        Asesino     Clerigo");
@@ -173,7 +173,7 @@ public class Tema2EjercicioPelea {
         System.out.println("Jugador 2");
         System.out.println("Personaliza tu personaje (1), o elegir uno preeterminado? (2)");
         eleccion_p2 = in.nextInt();
-        switch (eleccion_p2) {
+        switch (eleccion_p2) {  //Creacion de personaje
 
             case 1:
                 if (eleccion_p2 == 1) ;
@@ -231,7 +231,7 @@ public class Tema2EjercicioPelea {
                 System.out.println("Velocidad:  " + velocidad_p2);
 
 
-            case 2:
+            case 2: //Personajes predeterminados
                 System.out.println("Que personaje quieres?");
                 System.out.println("            Caballero       Mago        Asesino     Clerigo");
                 System.out.println("Salud       99              100         50          100");
@@ -294,7 +294,7 @@ public class Tema2EjercicioPelea {
                 }
         }
 
-        if (velocidad_p1 > velocidad_p2) {
+        if (velocidad_p1 > velocidad_p2) { //eleccion de turno
 
             opcion = 1;
             System.out.println("Jugador 1 es mas veloz ejecutando el caso " + opcion);
@@ -321,7 +321,7 @@ public class Tema2EjercicioPelea {
         switch (opcion) {
 
             case 1:
-                if (opcion == 1) {
+                if (opcion == 1) { //Combate
                     while (salud_p1 > 0 && salud_p2 > 0) {
 
                         rondas++;
@@ -331,7 +331,7 @@ public class Tema2EjercicioPelea {
                         bono_p1 = random.nextInt(10);
                         bono_p2 = random.nextInt(10);
 
-                        dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;
+                        dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1; //formula daño
                         if (dmg_p1 <= 0) {
                             dmg_p1 = 1;
                         }
@@ -343,7 +343,7 @@ public class Tema2EjercicioPelea {
 
                         if (salud_p2 > 0 && salud_p1 > 0) {
 
-                            System.out.println("Que quieres hacer?");
+                            System.out.println("Que quieres hacer?"); //acciones
                             System.out.println("1 = Atacar 2 = Curarse");
                             accion_p1 = in.nextInt();
                             if (accion_p1 != 1){
@@ -355,7 +355,7 @@ public class Tema2EjercicioPelea {
                                 }
                             }
 
-                            if (personaje_p1==3){
+                            if (personaje_p1==3){ //pasiva
 
                                 System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                 salud_p2--;
@@ -370,7 +370,7 @@ public class Tema2EjercicioPelea {
 
                             switch (accion_p1) {
                                 case 1:
-                                    if (accion_p1 == 1) {
+                                    if (accion_p1 == 1) { //daño
 
                                         salud_p2 = salud_p2 - dmg_p1;
                                         System.out.println("Jugador 2 recibe " + dmg_p1 + " de daño");
@@ -389,7 +389,7 @@ public class Tema2EjercicioPelea {
 
                                     }
                                 case 2:
-                                    if (accion_p1 == 2) {
+                                    if (accion_p1 == 2) { //sanacion
 
                                         if (personaje_p1 == 4){
                                             salud_p1 = salud_p1 + (bono_p1 * 2);
@@ -408,7 +408,7 @@ public class Tema2EjercicioPelea {
                         }
                     }
 
-                    if (salud_p1 > 0 && salud_p2 > 0) {
+                    if (salud_p1 > 0 && salud_p2 > 0) { //acciones
 
                         System.out.println("Que quieres hacer?");
                         System.out.println("1 = Atacar 2 = Curarse");
@@ -422,7 +422,7 @@ public class Tema2EjercicioPelea {
                             }
                         }
 
-                        if (personaje_p1==3){
+                        if (personaje_p1==3){//pasivas
 
                             System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                             salud_p2--;
@@ -435,7 +435,7 @@ public class Tema2EjercicioPelea {
 
                         }
 
-                        switch (accion_p2) {
+                        switch (accion_p2) {//daño
                             case 1:
                                 if (accion_p2 == 1) {
 
@@ -455,7 +455,7 @@ public class Tema2EjercicioPelea {
                                     }
                                 }
                             case 2:
-                                if (accion_p2 == 2) {
+                                if (accion_p2 == 2) { //curacion
 
                                     if (personaje_p2 == 4){
                                         salud_p2 = salud_p2 + (bono_p2 * 2);
@@ -472,7 +472,7 @@ public class Tema2EjercicioPelea {
                         }
                     }
 
-                    if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {
+                    if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {//rondas
                         turno = in.next();
                         System.out.println("-------------------------------------------");
                         contador++;
@@ -488,7 +488,7 @@ public class Tema2EjercicioPelea {
                         System.out.println("Rondas " + rondas);
 
                         Random random = new Random();
-                        bono_p1 = random.nextInt(10);
+                        bono_p1 = random.nextInt(10); //daño
                         bono_p2 = random.nextInt(10);
 
                         dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;
@@ -501,7 +501,7 @@ public class Tema2EjercicioPelea {
                             dmg_p2 = 1;
                         }
 
-                        if (salud_p1 > 0 && salud_p2 > 0) {
+                        if (salud_p1 > 0 && salud_p2 > 0) { //acciones
 
                             System.out.println("Que quieres hacer?");
                             System.out.println("1 = Atacar 2 = Curarse");
@@ -515,7 +515,7 @@ public class Tema2EjercicioPelea {
                                 }
                             }
 
-                            if (personaje_p1==3){
+                            if (personaje_p1==3){//pasivas
 
                                 System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                 salud_p2--;
@@ -530,7 +530,7 @@ public class Tema2EjercicioPelea {
 
                             switch (accion_p2) {
                                 case 1:
-                                    if (accion_p2 == 1) {
+                                    if (accion_p2 == 1) {//daño
 
                                         salud_p1 = salud_p1 - dmg_p2;
                                         System.out.println("Jugador 1 recibe " + dmg_p2 + " de daño");
@@ -549,7 +549,7 @@ public class Tema2EjercicioPelea {
 
                                     }
                                 case 2:
-                                    if (accion_p2 == 2) {
+                                    if (accion_p2 == 2) {//curacion
 
                                         if (personaje_p2 == 4){
                                             salud_p2 = salud_p2 + (bono_p2 * 2);
@@ -567,14 +567,14 @@ public class Tema2EjercicioPelea {
 
                             }
 
-                            if (salud_p1 < 0 && salud_p2 > 0) {
+                            if (salud_p1 < 0 && salud_p2 > 0) {//victoria
                                 salud_p1 = 0;
 
                                 System.out.println("La vide del jugador 2 es " + salud_p2 + " La vida del jugador uno es " + salud_p1);
                                 System.out.println("Gana jugador 2");
                             }
 
-                            if (salud_p2 > 0 && salud_p1 > 0) {
+                            if (salud_p2 > 0 && salud_p1 > 0) {//acciones
 
                                 System.out.println("Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
@@ -588,7 +588,7 @@ public class Tema2EjercicioPelea {
                                     }
                                 }
 
-                                if (personaje_p1==3){
+                                if (personaje_p1==3){//pasivas
 
                                     System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                     salud_p2--;
@@ -601,7 +601,7 @@ public class Tema2EjercicioPelea {
 
                                 }
 
-                                switch (accion_p1) {
+                                switch (accion_p1) {//daño
                                     case 1:
                                         if (accion_p1 == 1) {
 
@@ -621,7 +621,7 @@ public class Tema2EjercicioPelea {
                                             }
 
                                         }
-                                    case 2:
+                                    case 2://curacion
                                         if (accion_p1 == 2) {
 
                                             if (personaje_p1 == 4){
@@ -640,7 +640,7 @@ public class Tema2EjercicioPelea {
                                 }
                             }
 
-                            if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {
+                            if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {//ronda
                                 turno = in.next();
                                 System.out.println("-------------------------------------------");
                                 contador++;
@@ -663,7 +663,7 @@ public class Tema2EjercicioPelea {
                             bono_p1 = random.nextInt(10);
                             bono_p2 = random.nextInt(10);
 
-                            dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;
+                            dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;//daño
                             if (dmg_p1 <= 0) {
                                 dmg_p1 = 1;
                             }
@@ -673,7 +673,7 @@ public class Tema2EjercicioPelea {
                                 dmg_p2 = 1;
                             }
 
-                            if (salud_p2 > 0 && salud_p1 > 0) {
+                            if (salud_p2 > 0 && salud_p1 > 0) {//accion
 
                                 System.out.println("Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
@@ -687,7 +687,7 @@ public class Tema2EjercicioPelea {
                                     }
                                 }
 
-                                if (personaje_p1==3){
+                                if (personaje_p1==3){//pasivas
 
                                     System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                     salud_p2--;
@@ -702,7 +702,7 @@ public class Tema2EjercicioPelea {
 
                                 switch (accion_p1) {
                                     case 1:
-                                        if (accion_p1 == 1) {
+                                        if (accion_p1 == 1) {//daño
 
                                             salud_p2 = salud_p2 - dmg_p1;
                                             System.out.println("Jugador 2 recibe " + dmg_p1 + " de daño");
@@ -720,7 +720,7 @@ public class Tema2EjercicioPelea {
                                             }
 
                                         }
-                                    case 2:
+                                    case 2://curacion
                                         if (accion_p1 == 2) {
 
                                             if (personaje_p1 == 4){
@@ -739,7 +739,7 @@ public class Tema2EjercicioPelea {
                                 }
                             }
 
-                            if (salud_p1 > 0 && salud_p2 > 0) {
+                            if (salud_p1 > 0 && salud_p2 > 0) {//accion
 
                                 System.out.println("Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
@@ -753,7 +753,7 @@ public class Tema2EjercicioPelea {
                                     }
                                 }
 
-                                if (personaje_p1==3){
+                                if (personaje_p1==3){//pasiva
 
                                     System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                     salud_p2--;
@@ -768,7 +768,7 @@ public class Tema2EjercicioPelea {
 
                                 switch (accion_p2) {
                                     case 1:
-                                        if (accion_p2 == 1) {
+                                        if (accion_p2 == 1) {//daño
 
                                             salud_p1 = salud_p1 - dmg_p2;
                                             System.out.println("Jugador 1 recibe " + dmg_p2 + " de daño");
@@ -786,7 +786,7 @@ public class Tema2EjercicioPelea {
                                             }
 
                                         }
-                                    case 2:
+                                    case 2://curacion
                                         if (accion_p2 == 2) {
 
                                             if (personaje_p2 == 4){
@@ -805,7 +805,7 @@ public class Tema2EjercicioPelea {
 
                                 }
 
-                                if (rondas > contador && salud_p1 > 0 && salud_p2 > 0) {
+                                if (rondas > contador && salud_p1 > 0 && salud_p2 > 0) {//ronda
                                     turno = in.next();
                                     System.out.println("-------------------------------------------");
                                     contador++;
@@ -818,7 +818,7 @@ public class Tema2EjercicioPelea {
                                 bono_p1 = random.nextInt(10);
                                 bono_p2 = random.nextInt(10);
 
-                                dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;
+                                dmg_p1 = (ataque_p1 / defensa_p2) + bono_p1;//daño
                                 if (dmg_p1 <= 0) {
                                     dmg_p1 = 1;
                                 }
@@ -828,7 +828,7 @@ public class Tema2EjercicioPelea {
                                     dmg_p2 = 1;
                                 }
 
-                                if (salud_p1 > 0 && salud_p2 > 0) {
+                                if (salud_p1 > 0 && salud_p2 > 0) {//accion
 
                                     System.out.println("Que quieres hacer?");
                                     System.out.println("1 = Atacar 2 = Curarse");
@@ -842,7 +842,7 @@ public class Tema2EjercicioPelea {
                                         }
                                     }
 
-                                    if (personaje_p1==3){
+                                    if (personaje_p1==3){//pasivas
 
                                         System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                         salud_p2--;
@@ -855,7 +855,7 @@ public class Tema2EjercicioPelea {
 
                                     }
 
-                                    switch (accion_p2) {
+                                    switch (accion_p2) {//daño
                                         case 1:
                                             if (accion_p2 == 1) {
 
@@ -876,7 +876,7 @@ public class Tema2EjercicioPelea {
 
                                             }
                                         case 2:
-                                            if (accion_p2 == 2) {
+                                            if (accion_p2 == 2) {//curacion
 
                                                 if (personaje_p2 == 4){
                                                     salud_p2 = salud_p2 + (bono_p2 * 2);
@@ -893,14 +893,14 @@ public class Tema2EjercicioPelea {
                                             }
 
                                     }
-                                    if (salud_p1 < 0 && salud_p2 > 0) {
+                                    if (salud_p1 < 0 && salud_p2 > 0) {//victoria
                                         salud_p1 = 0;
 
                                         System.out.println("La vide del jugador 2 es " + salud_p2 + "La vida del jugador 1 es " + salud_p1);
                                         System.out.println("Gana jugador 2");
                                     }
 
-                                    if (salud_p2 > 0 && salud_p1 > 0) {
+                                    if (salud_p2 > 0 && salud_p1 > 0) {//accion
 
                                         System.out.println("Que quieres hacer?");
                                         System.out.println("1 = Atacar 2 = Curarse");
@@ -914,7 +914,7 @@ public class Tema2EjercicioPelea {
                                             }
                                         }
 
-                                        if (personaje_p1==3){
+                                        if (personaje_p1==3){//pasivas
 
                                             System.out.println("Envenenamiento, se le restara 1 de vida al jugador 2");
                                             salud_p2--;
@@ -927,7 +927,7 @@ public class Tema2EjercicioPelea {
 
                                         }
 
-                                        switch (accion_p1) {
+                                        switch (accion_p1) {//daño
                                             case 1:
                                                 if (accion_p1 == 1) {
 
@@ -947,7 +947,7 @@ public class Tema2EjercicioPelea {
                                                     }
 
                                                 }
-                                            case 2:
+                                            case 2://curacion
                                                 if (accion_p1 == 2) {
 
                                                     if (personaje_p1 == 4){
@@ -967,7 +967,7 @@ public class Tema2EjercicioPelea {
                                         }
                                     }
 
-                                    if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {
+                                    if (rondas > contador && salud_p2 > 0 && salud_p1 > 0) {//rondas
                                         turno = in.next();
                                         System.out.println("-------------------------------------------");
                                         contador++;
