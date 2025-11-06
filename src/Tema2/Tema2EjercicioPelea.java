@@ -24,11 +24,9 @@ public class Tema2EjercicioPelea {
         int bono_p2 = 0;
         int accion_p2 = 0;
 
-        Boolean equivalencia = false;
         int rondas = 0;
         int contador = 0;
 
-        int bono;
         int num_random;
 
         int dmg_p1 = 0;
