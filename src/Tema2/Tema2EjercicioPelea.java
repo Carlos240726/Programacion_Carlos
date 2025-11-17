@@ -14,6 +14,7 @@ public class Tema2EjercicioPelea {
         int valor_p1 = 0;
         int bono_p1 = 0;
         int accion_p1;
+        int vida_p1 = 0;
 
         int atributos_p2 = 0;
         int salud_p2 = 0;
@@ -23,6 +24,7 @@ public class Tema2EjercicioPelea {
         int valor_p2 = 0;
         int bono_p2 = 0;
         int accion_p2 = 0;
+        int vida_p2 = 0;
 
         int rondas = 0;
         int contador = 0;
@@ -46,7 +48,7 @@ public class Tema2EjercicioPelea {
         switch (eleccion_p1) {
 
             case 1:
-                if (eleccion_p1 == 1) ;
+                //if (eleccion_p1 == 1) ;
 
                 System.out.println("Jugador 1");  //Creacion de personaje
 
@@ -74,14 +76,15 @@ public class Tema2EjercicioPelea {
                 defensa_p1 = in.nextInt();
                 while (defensa_p1 < 1 || defensa_p1 >= 200) {
 
-                    if (atributos_p1 + defensa_p1 == 500) {
 
-                        defensa_p1 = defensa_p1 - 1;
-
-                    }
 
                     System.out.println("Eso no es posible");
                     defensa_p1 = in.nextInt();
+                }
+                if (atributos_p1 + defensa_p1 == 500) {
+
+                    defensa_p1 = defensa_p1 - 1;
+
                 }
                 atributos_p1 = atributos_p1 + defensa_p1;
                 valor_p1 = atributos_p1;
@@ -102,7 +105,7 @@ public class Tema2EjercicioPelea {
                 System.out.println("Defensa:    " + defensa_p1);
                 System.out.println("Velocidad:  " + velocidad_p1);
 
-
+                break;
             case 2: //Predeterminados
                 if (eleccion_p1 == 2) {
                     System.out.println("Que personaje quieres?");
@@ -167,6 +170,7 @@ public class Tema2EjercicioPelea {
                     }
                 }
         }
+
         System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println("Jugador 2");
         System.out.println("Personaliza tu personaje (1), o elegir uno preeterminado? (2)");
@@ -177,7 +181,7 @@ public class Tema2EjercicioPelea {
                 if (eleccion_p2 == 1) ;
 
                 System.out.println("Dame tus puntos de salud");
-                salud_p1 = in.nextInt();
+                salud_p2 = in.nextInt();
                 while (salud_p2 < 1 || salud_p2 > 200) {
                     System.out.println("Eso no es posible");
                     salud_p2 = in.nextInt();
@@ -200,15 +204,18 @@ public class Tema2EjercicioPelea {
                 defensa_p2 = in.nextInt();
                 while (defensa_p2 < 1 || defensa_p2 >= 200) {
 
-                    if (atributos_p2 + defensa_p2 == 500) {
 
-                        defensa_p2 = defensa_p2 - 1;
-
-                    }
 
                     System.out.println("Eso no es posible");
                     defensa_p2 = in.nextInt();
                 }
+
+                if (atributos_p2 + defensa_p2 == 500) {
+
+                    defensa_p2 = defensa_p2 - 1;
+
+                }
+
                 atributos_p2 = atributos_p2 + defensa_p2;
                 valor_p2 = atributos_p2;
                 System.out.println("Tienes asignados " + atributos_p2);
@@ -230,66 +237,68 @@ public class Tema2EjercicioPelea {
 
 
             case 2: //Personajes predeterminados
-                System.out.println("Que personaje quieres?");
-                System.out.println("            Caballero       Mago        Asesino     Clerigo");
-                System.out.println("Salud       99              100         50          100");
-                System.out.println("Ataque      200             75         200         100");
-                System.out.println("Defensa     200             50          50          100");
-                System.out.println("Velocidad   1               100         200         100");
-                System.out.println("Habilidades Caballero: Reduccion de daño (pasiva)");
-                System.out.println("Habilidades Mago: Cañon de cristal (pasiva)");
-                System.out.println("Habilidades Asesino: Veneno (pasiva)");
-                System.out.println("Habilidades Clerigo: Sanacion (pasiva)");
+                if (eleccion_p2==2){
+                    System.out.println("Que personaje quieres?");
+                    System.out.println("            Caballero       Mago        Asesino     Clerigo");
+                    System.out.println("Salud       99              100         50          100");
+                    System.out.println("Ataque      200             75         200         100");
+                    System.out.println("Defensa     200             50          50          100");
+                    System.out.println("Velocidad   1               100         200         100");
+                    System.out.println("Habilidades Caballero: Reduccion de daño (pasiva)");
+                    System.out.println("Habilidades Mago: Cañon de cristal (pasiva)");
+                    System.out.println("Habilidades Asesino: Veneno (pasiva)");
+                    System.out.println("Habilidades Clerigo: Sanacion (pasiva)");
 
-                System.out.println("Cual quieres entonces, con numeros del 1 al 4, las habilidades se explicaran despues de la seleccion del personaje");
-                personaje_p2 = in.nextInt();
-                switch (personaje_p2) {
+                    System.out.println("Cual quieres entonces, con numeros del 1 al 4, las habilidades se explicaran despues de la seleccion del personaje");
+                    personaje_p2 = in.nextInt();
+                    switch (personaje_p2) {
 
-                    case 1:
-                        if (personaje_p2 == 1) {
+                        case 1:
+                            if (personaje_p2 == 1) {
 
-                            System.out.println("Caballero");
-                            System.out.println("Recibe un 30% menos de daño");
-                            salud_p2 = 99;
-                            ataque_p2 = 200;
-                            defensa_p2 = 200 + (200*30/100);
-                            velocidad_p2 = 1;
+                                System.out.println("Caballero");
+                                System.out.println("Recibe un 30% menos de daño");
+                                salud_p2 = 99;
+                                ataque_p2 = 200;
+                                defensa_p2 = 200 + (200*30/100);
+                                velocidad_p2 = 1;
 
-                        }
-                    case 2:
-                        if (personaje_p2 == 2) {
+                            }
+                        case 2:
+                            if (personaje_p2 == 2) {
 
-                            System.out.println("Mago");
-                            System.out.println("Recibe un 5% mas de daño y hace un 40% mas de daño");
-                            salud_p2 = 100;
-                            ataque_p2 = 75 + (75*40/100);
-                            defensa_p2 = 50 - (50*5/100);
-                            velocidad_p2 = 100;
+                                System.out.println("Mago");
+                                System.out.println("Recibe un 5% mas de daño y hace un 40% mas de daño");
+                                salud_p2 = 100;
+                                ataque_p2 = 75 + (75*40/100);
+                                defensa_p2 = 50 - (50*5/100);
+                                velocidad_p2 = 100;
 
-                        }
-                    case 3:
-                        if (personaje_p2 == 3) {
+                            }
+                        case 3:
+                            if (personaje_p2 == 3) {
 
-                            System.out.println("Asesino");
-                            System.out.println("En cada turno causa 1 daño");
-                            salud_p2 = 50;
-                            ataque_p2 = 200;
-                            defensa_p2 = 50;
-                            velocidad_p2 = 200;
+                                System.out.println("Asesino");
+                                System.out.println("En cada turno causa 1 daño");
+                                salud_p2 = 50;
+                                ataque_p2 = 200;
+                                defensa_p2 = 50;
+                                velocidad_p2 = 200;
 
-                        }
-                    case 4:
-                        if (personaje_p2 == 4) {
+                            }
+                        case 4:
+                            if (personaje_p2 == 4) {
 
-                            System.out.println("Clerigo");
-                            System.out.println("Sanacion causa que se cure el doble de salud");
-                            salud_p2 = 100;
-                            ataque_p2 = 100;
-                            defensa_p2 = 100;
-                            velocidad_p2 = 100;
+                                System.out.println("Clerigo");
+                                System.out.println("Sanacion causa que se cure el doble de salud");
+                                salud_p2 = 100;
+                                ataque_p2 = 100;
+                                defensa_p2 = 100;
+                                velocidad_p2 = 100;
 
-                        }
-                }
+                            }
+                    }}
+
         }
 
         if (velocidad_p1 > velocidad_p2) { //eleccion de turno
@@ -314,6 +323,9 @@ public class Tema2EjercicioPelea {
                 }
             }
         }
+        vida_p1 = salud_p1;
+        vida_p2 = salud_p2;
+
         System.out.println("La batalla empieza");
 
         switch (opcion) {
@@ -341,7 +353,7 @@ public class Tema2EjercicioPelea {
 
                         if (salud_p2 > 0 && salud_p1 > 0) {
 
-                            System.out.println("Que quieres hacer?"); //acciones
+                            System.out.println("Jugador 1: Que quieres hacer?"); //acciones
                             System.out.println("1 = Atacar 2 = Curarse");
                             accion_p1 = in.nextInt();
                             if (accion_p1 != 1){
@@ -388,17 +400,21 @@ public class Tema2EjercicioPelea {
                                     }
                                 case 2:
                                     if (accion_p1 == 2) { //sanacion
+                                        if (vida_p1>salud_p1){
 
-                                        if (personaje_p1 == 4){
-                                            salud_p1 = salud_p1 + (bono_p1 * 2);
-                                            System.out.println("Te has curado " + bono_p1 * 2);
-                                            System.out.println("Tu vida es " + salud_p1);
-                                        }else {
+                                            if (personaje_p1 == 4){
+                                                salud_p1 = salud_p1 + (bono_p1 * 2);
+                                                System.out.println("Te has curado " + bono_p1 * 2);
+                                                System.out.println("Tu vida es " + salud_p1);
+                                            }else {
 
-                                            salud_p1 = salud_p1 + bono_p1;
-                                            System.out.println("Te has curado " + bono_p1);
-                                            System.out.println("Tu vida es " + salud_p1);
+                                                salud_p1 = salud_p1 + bono_p1;
+                                                System.out.println("Te has curado " + bono_p1);
+                                                System.out.println("Tu vida es " + salud_p1);
 
+                                            }
+                                        }else{
+                                            System.out.println("Eso no es posible");
                                         }
                                     }
 
@@ -408,7 +424,7 @@ public class Tema2EjercicioPelea {
 
                     if (salud_p1 > 0 && salud_p2 > 0) { //acciones
 
-                        System.out.println("Que quieres hacer?");
+                        System.out.println("Jugador 2: Que quieres hacer?");
                         System.out.println("1 = Atacar 2 = Curarse");
                         accion_p2 = in.nextInt();
                         if (accion_p2 != 1){
@@ -455,16 +471,21 @@ public class Tema2EjercicioPelea {
                             case 2:
                                 if (accion_p2 == 2) { //curacion
 
-                                    if (personaje_p2 == 4){
-                                        salud_p2 = salud_p2 + (bono_p2 * 2);
-                                        System.out.println("Te has curado " + bono_p2 * 2);
-                                        System.out.println("Tu vida es " + salud_p2);
-                                    }else {
+                                    if (vida_p2>salud_p2){
 
-                                        salud_p2 = salud_p2 + bono_p2;
-                                        System.out.println("Te has curado " + bono_p2);
-                                        System.out.println("Tu vida es " + salud_p2);
+                                        if (personaje_p2 == 4){
+                                            salud_p2 = salud_p2 + (bono_p2 * 2);
+                                            System.out.println("Te has curado " + bono_p2 * 2);
+                                            System.out.println("Tu vida es " + salud_p2);
+                                        }else {
 
+                                            salud_p2 = salud_p2 + bono_p2;
+                                            System.out.println("Te has curado " + bono_p2);
+                                            System.out.println("Tu vida es " + salud_p2);
+
+                                        }
+                                    }else{
+                                        System.out.println("Mo es posible");
                                     }
                                 }
                         }
@@ -501,7 +522,7 @@ public class Tema2EjercicioPelea {
 
                         if (salud_p1 > 0 && salud_p2 > 0) { //acciones
 
-                            System.out.println("Que quieres hacer?");
+                            System.out.println("Jugador 2: Que quieres hacer?");
                             System.out.println("1 = Atacar 2 = Curarse");
                             accion_p2 = in.nextInt();
                             if (accion_p2 != 1){
@@ -549,18 +570,22 @@ public class Tema2EjercicioPelea {
                                 case 2:
                                     if (accion_p2 == 2) {//curacion
 
-                                        if (personaje_p2 == 4){
-                                            salud_p2 = salud_p2 + (bono_p2 * 2);
-                                            System.out.println("Te has curado " + bono_p2 * 2);
-                                            System.out.println("Tu vida es " + salud_p2);
+                                        if (vida_p2>salud_p2) {
+
+                                            if (personaje_p2 == 4) {
+                                                salud_p2 = salud_p2 + (bono_p2 * 2);
+                                                System.out.println("Te has curado " + bono_p2 * 2);
+                                                System.out.println("Tu vida es " + salud_p2);
+                                            } else {
+
+                                                salud_p2 = salud_p2 + bono_p2;
+                                                System.out.println("Te has curado " + bono_p2);
+                                                System.out.println("Tu vida es " + salud_p2);
+
+                                            }
                                         }else {
-
-                                            salud_p2 = salud_p2 + bono_p2;
-                                            System.out.println("Te has curado " + bono_p2);
-                                            System.out.println("Tu vida es " + salud_p2);
-
+                                            System.out.println("Eso no es posible");
                                         }
-
                                     }
 
                             }
@@ -574,7 +599,7 @@ public class Tema2EjercicioPelea {
 
                             if (salud_p2 > 0 && salud_p1 > 0) {//acciones
 
-                                System.out.println("Que quieres hacer?");
+                                System.out.println("Jugador 1: Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
                                 accion_p1 = in.nextInt();
                                 if (accion_p1 != 1){
@@ -622,16 +647,20 @@ public class Tema2EjercicioPelea {
                                     case 2://curacion
                                         if (accion_p1 == 2) {
 
-                                            if (personaje_p1 == 4){
-                                                salud_p1 = salud_p1 + (bono_p1 * 2);
-                                                System.out.println("Te has curado " + bono_p1 * 2);
-                                                System.out.println("Tu vida es " + salud_p1);
-                                            }else {
+                                            if (vida_p1>salud_p1){
 
-                                                salud_p1 = salud_p1 + bono_p1;
-                                                System.out.println("Te has curado " + bono_p1);
-                                                System.out.println("Tu vida es " + salud_p1);
+                                                if (personaje_p1 == 4){
+                                                    salud_p1 = salud_p1 + (bono_p1 * 2);
+                                                    System.out.println("Te has curado " + bono_p1 * 2);
+                                                    System.out.println("Tu vida es " + salud_p1);
+                                                }else {
 
+                                                    salud_p1 = salud_p1 + bono_p1;
+                                                    System.out.println("Te has curado " + bono_p1);
+                                                    System.out.println("Tu vida es " + salud_p1);
+                                                }
+                                            }else{
+                                                System.out.println("Eso no es posible");
                                             }
                                         }
 
@@ -673,7 +702,7 @@ public class Tema2EjercicioPelea {
 
                             if (salud_p2 > 0 && salud_p1 > 0) {//accion
 
-                                System.out.println("Que quieres hacer?");
+                                System.out.println("Jugador 1: Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
                                 accion_p1 = in.nextInt();
                                 if (accion_p1 != 1){
@@ -721,25 +750,29 @@ public class Tema2EjercicioPelea {
                                     case 2://curacion
                                         if (accion_p1 == 2) {
 
-                                            if (personaje_p1 == 4){
-                                                salud_p1 = salud_p1 + (bono_p1 * 2);
-                                                System.out.println("Te has curado " + bono_p1 * 2);
-                                                System.out.println("Tu vida es " + salud_p1);
+                                            if (vida_p1>salud_p1){
+
+                                                if (personaje_p1 == 4){
+                                                    salud_p1 = salud_p1 + (bono_p1 * 2);
+                                                    System.out.println("Te has curado " + bono_p1 * 2);
+                                                    System.out.println("Tu vida es " + salud_p1);
+                                                }else {
+
+                                                    salud_p1 = salud_p1 + bono_p1;
+                                                    System.out.println("Te has curado " + bono_p1);
+                                                    System.out.println("Tu vida es " + salud_p1);
+
+                                                }
                                             }else {
-
-                                                salud_p1 = salud_p1 + bono_p1;
-                                                System.out.println("Te has curado " + bono_p1);
-                                                System.out.println("Tu vida es " + salud_p1);
-
+                                                System.out.println("Eso no es posible");
                                             }
                                         }
-
                                 }
                             }
 
                             if (salud_p1 > 0 && salud_p2 > 0) {//accion
 
-                                System.out.println("Que quieres hacer?");
+                                System.out.println("Jugador 2: Que quieres hacer?");
                                 System.out.println("1 = Atacar 2 = Curarse");
                                 accion_p2 = in.nextInt();
                                 if (accion_p2 != 1){
@@ -787,16 +820,21 @@ public class Tema2EjercicioPelea {
                                     case 2://curacion
                                         if (accion_p2 == 2) {
 
-                                            if (personaje_p2 == 4){
-                                                salud_p2 = salud_p2 + (bono_p2 * 2);
-                                                System.out.println("Te has curado " + bono_p2 * 2);
-                                                System.out.println("Tu vida es " + salud_p2);
+                                            if (vida_p2>salud_p2){
+
+                                                if (personaje_p2 == 4){
+                                                    salud_p2 = salud_p2 + (bono_p2 * 2);
+                                                    System.out.println("Te has curado " + bono_p2 * 2);
+                                                    System.out.println("Tu vida es " + salud_p2);
+                                                }else {
+
+                                                    salud_p2 = salud_p2 + bono_p2;
+                                                    System.out.println("Te has curado " + bono_p2);
+                                                    System.out.println("Tu vida es " + salud_p2);
+
+                                                }
                                             }else {
-
-                                                salud_p2 = salud_p2 + bono_p2;
-                                                System.out.println("Te has curado " + bono_p2);
-                                                System.out.println("Tu vida es " + salud_p2);
-
+                                                System.out.println("Eso no es posible");
                                             }
 
                                         }
@@ -828,7 +866,7 @@ public class Tema2EjercicioPelea {
 
                                 if (salud_p1 > 0 && salud_p2 > 0) {//accion
 
-                                    System.out.println("Que quieres hacer?");
+                                    System.out.println("Jugador 2: Que quieres hacer?");
                                     System.out.println("1 = Atacar 2 = Curarse");
                                     accion_p2 = in.nextInt();
                                     if (accion_p2 != 1){
@@ -876,18 +914,22 @@ public class Tema2EjercicioPelea {
                                         case 2:
                                             if (accion_p2 == 2) {//curacion
 
-                                                if (personaje_p2 == 4){
-                                                    salud_p2 = salud_p2 + (bono_p2 * 2);
-                                                    System.out.println("Te has curado " + bono_p2 * 2);
-                                                    System.out.println("Tu vida es " + salud_p2);
+                                                if (vida_p2>salud_p2) {
+
+                                                    if (personaje_p2 == 4) {
+                                                        salud_p2 = salud_p2 + (bono_p2 * 2);
+                                                        System.out.println("Te has curado " + bono_p2 * 2);
+                                                        System.out.println("Tu vida es " + salud_p2);
+                                                    } else {
+
+                                                        salud_p2 = salud_p2 + bono_p2;
+                                                        System.out.println("Te has curado " + bono_p2);
+                                                        System.out.println("Tu vida es " + salud_p2);
+
+                                                    }
                                                 }else {
-
-                                                    salud_p2 = salud_p2 + bono_p2;
-                                                    System.out.println("Te has curado " + bono_p2);
-                                                    System.out.println("Tu vida es " + salud_p2);
-
+                                                    System.out.println("Eso no es posible");
                                                 }
-
                                             }
 
                                     }
@@ -900,7 +942,7 @@ public class Tema2EjercicioPelea {
 
                                     if (salud_p2 > 0 && salud_p1 > 0) {//accion
 
-                                        System.out.println("Que quieres hacer?");
+                                        System.out.println("Jugador 1: Que quieres hacer?");
                                         System.out.println("1 = Atacar 2 = Curarse");
                                         accion_p1 = in.nextInt();
                                         if (accion_p1 != 1){
@@ -948,20 +990,23 @@ public class Tema2EjercicioPelea {
                                             case 2://curacion
                                                 if (accion_p1 == 2) {
 
-                                                    if (personaje_p1 == 4){
-                                                        salud_p1 = salud_p1 + (bono_p1 * 2);
-                                                        System.out.println("Te has curado " + bono_p1 * 2);
-                                                        System.out.println("Tu vida es " + salud_p1);
+                                                    if (vida_p1>salud_p1){
+
+                                                        if (personaje_p1 == 4){
+                                                            salud_p1 = salud_p1 + (bono_p1 * 2);
+                                                            System.out.println("Te has curado " + bono_p1 * 2);
+                                                            System.out.println("Tu vida es " + salud_p1);
+                                                        }else {
+
+                                                            salud_p1 = salud_p1 + bono_p1;
+                                                            System.out.println("Te has curado " + bono_p1);
+                                                            System.out.println("Tu vida es " + salud_p1);
+
+                                                        }
                                                     }else {
-
-                                                        salud_p1 = salud_p1 + bono_p1;
-                                                        System.out.println("Te has curado " + bono_p1);
-                                                        System.out.println("Tu vida es " + salud_p1);
-
+                                                        System.out.println("Eso no es posible");
                                                     }
-
                                                 }
-
                                         }
                                     }
 
