@@ -2,6 +2,8 @@ package Tema3;
 
 import java.util.Scanner;
 
+import static Tema3.Tema3Ejercicio1.numberSing;
+
 
 public class Tema3Ejercicio2 {
     public static boolean isAdult(int age){
@@ -19,7 +21,7 @@ public class Tema3Ejercicio2 {
         System.out.println("Dame un numero");
         int numero = in.nextInt();
 
-        int resultado = Tema3Ejercicio1.numberSing(numero);
+        int resultado =numberSing(numero);
 
         System.out.println(resultado);
 
@@ -42,10 +44,10 @@ public class Tema3Ejercicio2 {
         int edad = in.nextInt();
         boolean age = isAdult(edad);
 
-        if (age==true){
+        if (age){
             System.out.println("Es mayor de edad");
         }
-        if (age==false){
+        if (!age){
             System.out.println("Es menor de edad");
         }
     }

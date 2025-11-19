@@ -7,7 +7,7 @@ public class Tema3Ejercicio6 {
 
         int contador=1;
         while (contador<=10){
-            Tema3Ejercicio5.Multiplicar(contador);
+            Tema3Ejercicio5.multiplicar(contador);
             System.out.println("-------------------------------------");
             contador++;
         }

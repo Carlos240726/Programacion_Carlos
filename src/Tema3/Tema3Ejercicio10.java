@@ -114,12 +114,12 @@ public class Tema3Ejercicio10 {
                 if (proceso == 1){
                     euro = in.nextDouble();
                     System.out.println("Ahora te lo pasaremos a dolares");
-                    double euro2dolar = Tema3Ejercicio4.showMenu(proceso,euro,dolar);
+                    double euro2dolar = Tema3Ejercicio4.cambioDivisa(proceso,euro,dolar);
                     System.out.println("De € a $ es " + euro2dolar);
                 } else if (proceso == 2) {
                     dolar = in.nextDouble();
                     System.out.println("Ahora te lo pasaremos a euros");
-                    double dolar2euro = Tema3Ejercicio4.showMenu(proceso,euro,dolar);
+                    double dolar2euro = Tema3Ejercicio4.cambioDivisa(proceso,euro,dolar);
                     System.out.println("De € a $ es " + dolar2euro);
                 }
                 break;
@@ -131,7 +131,7 @@ public class Tema3Ejercicio10 {
                 while (numero<1 || numero>10){
                     System.out.println("ese numero no es posible");
                 }
-                Tema3Ejercicio5.Multiplicar(numero);
+                Tema3Ejercicio5.multiplicar(numero);
                 break;
 
             case 6:
@@ -139,7 +139,7 @@ public class Tema3Ejercicio10 {
 
                 int contador=1;
                 while (contador<=10){
-                    Tema3Ejercicio5.Multiplicar(contador);
+                    Tema3Ejercicio5.multiplicar(contador);
                     System.out.println("-------------------------------------");
                     contador++;
                 }
@@ -160,7 +160,7 @@ public class Tema3Ejercicio10 {
                     if (numero==0){
                         verificacion=false;
                     }
-                    Tema3Ejercicio7.Primos(numero);
+                    Tema3Ejercicio7.primos(numero);
                 }
                 break;
 

@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class Tema3Ejercicio5 {
 
-    public static int Multiplicar(int numero){
-        int contador = 0;
+    public static int multiplicar(int numero){
         int resul = 0;
-        while (contador <= 10){
-            resul=contador*numero;
-            System.out.println(numero + "*" + contador + "=" + resul);
-            contador++;
+        //TODO:for
+        for( int i =0;i<= 10;i++){
+            resul=i*numero;
+            System.out.println(numero + "*" + i + "=" + resul);
         }
         return resul;
     }
@@ -23,7 +22,8 @@ public class Tema3Ejercicio5 {
         int numero = in.nextInt();
         while (numero<1 || numero>10){
             System.out.println("ese numero no es posible");
+            numero = in.nextInt();
         }
-        Multiplicar(numero);
+        multiplicar(numero);
     }
 }

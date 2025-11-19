@@ -3,7 +3,7 @@ package Tema3;
 import java.util.Scanner;
 
 public class Tema3Ejercicio4 {
-    public static double showMenu(int proceso, double euro, double dolar){
+    public static double cambioDivisa(int proceso, double euro, double dolar){
         double valor = 0;
         if (proceso==1){
             valor = euro * 1.16;
@@ -13,6 +13,9 @@ public class Tema3Ejercicio4 {
         return valor;
 
     }
+
+    public static void showMenu(){}
+
     public static void main (String[] args){
 
         int proceso;
@@ -20,6 +23,7 @@ public class Tema3Ejercicio4 {
         double dolar=0;
 
         Scanner in = new Scanner(System.in);
+        //meter esto en un procedimiento showMenu()
         System.out.println("Que divisa tienes, € o $? (1 = €) (2 = $)");
         proceso = in.nextInt();
         if (proceso != 1){
@@ -31,12 +35,12 @@ public class Tema3Ejercicio4 {
         if (proceso == 1){
             euro = in.nextDouble();
             System.out.println("Ahora te lo pasaremos a dolares");
-            double euro2dolar = showMenu(proceso,euro,dolar);
+            double euro2dolar = cambioDivisa(proceso,euro,dolar);
             System.out.println("De € a $ es " + euro2dolar);
         } else if (proceso == 2) {
             dolar = in.nextDouble();
             System.out.println("Ahora te lo pasaremos a euros");
-            double dolar2euro = showMenu(proceso,euro,dolar);
+            double dolar2euro = cambioDivisa(proceso,euro,dolar);
             System.out.println("De € a $ es " + dolar2euro);
         }
     }

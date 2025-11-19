@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Tema3Ejercicio7 {
 
-    public static int Primos(int numero){
+    public static int primos(int numero){
         int contador = 0;
         int divisor = numero;
         while (divisor>0){
@@ -36,7 +36,9 @@ public class Tema3Ejercicio7 {
             if (numero==0){
                 verificacion=false;
             }
-            Primos(numero);
+            else {
+                primos(numero);
+            }
         }
     }
 }

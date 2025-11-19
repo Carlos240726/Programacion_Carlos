@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Tema3Ejercicio3 {
 
     public static boolean validRadius(int radio){
+        //return radio<0;
         if (radio<0){
             System.out.println("Ese valor no es correcto");
             return false;
