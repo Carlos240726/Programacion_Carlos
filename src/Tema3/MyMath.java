@@ -50,15 +50,15 @@ public class MyMath {
             return false;
         }
     }
-    /*
+
     public static void noprimo(int numero){
             System.out.println("El numero no es primo");
     }
 
-     */
-    public static boolean noprimo(int numero){
-        return !primo(numero);
-    }
+
+   // public static boolean noprimo(int numero){
+   //     return !primo(numero);
+ //   }
 
 //-------------------------------------------------------------------------------------------------------------------
     public static int nCifras(int entero){
