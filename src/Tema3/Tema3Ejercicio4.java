@@ -26,6 +26,7 @@ public class Tema3Ejercicio4 {
         //meter esto en un procedimiento showMenu()
         System.out.println("Que divisa tienes, € o $? (1 = €) (2 = $)");
         proceso = in.nextInt();
+        showMenu();
         if (proceso != 1){
             if (proceso != 2){
                 proceso = in.nextInt();
