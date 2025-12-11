@@ -1,7 +1,7 @@
 package Tema3.Array;
 
 import java.util.Scanner;
-import static Tema3.Tema3Array.*;
+import static Tema3.Array.Tema3Array.*;
 
 
 public class Tema3Array1 {

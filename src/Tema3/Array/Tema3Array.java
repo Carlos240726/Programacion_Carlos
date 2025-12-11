@@ -1,4 +1,4 @@
-package Tema3;
+package Tema3.Array;
 
 import java.util.Scanner;
 
