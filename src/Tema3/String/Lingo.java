@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Lingo {
 
-    public static void verificacion (char[] palabra, char[] comprobar){
+    public static boolean verificacion (char[] palabra, char[] comprobar){
         int contador=0;
         char[] respuesta={'-','-','-','-','-'};
 
@@ -16,19 +16,30 @@ public class Lingo {
             contador++;
         }
         System.out.println(respuesta);
-
+        contador=0;
+        for (int i=0;i<palabra.length;i++){
+            if (palabra[i]==comprobar[i]){
+                contador++;
+            }
+        }
+        if (contador==5){
+            return true;
+        }else {
+            return false;
+        }
     }
     public static void main (String[] args){
         Scanner in=new Scanner(System.in);
 
         char[] palabra = {'p','o','l','l','o'};
 
+        boolean comprobacion=false;
         int contador = 5;
-        while (contador>0){
+        while (contador>0 && !comprobacion){
             System.out.println("Dame una palabra de 5 letras");
             String respuesta= in.next();
             char[] comprobar=respuesta.toCharArray();
-            verificacion(palabra,comprobar);
+            comprobacion=verificacion(palabra,comprobar);
             contador--;
         }
     }
