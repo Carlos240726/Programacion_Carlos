@@ -1,77 +1,114 @@
 package Tema4.Personas_Y_Cuentas;
 
+import java.util.Arrays;
+
 public class Persona {
-    private String[] cuentas= new String[3];
-    private float[] saldos = new float[3];
+    private Cuenta[] cuentas;
+    private int numCuentas;
     private String dni;
+/*Constructores*/
+    public Persona(){
+        this.dni="12345678A";
+        this.cuentas=new Cuenta[3];
+        this.numCuentas=0;
+    }
+    public Persona(String dni, Cuenta[] cuentas, int numCuentas){
+        this.dni=dni;
+        this.cuentas=new Cuenta[3];
+        this.numCuentas=0;
 
-    public String[] getCuentas() {return cuentas;}
-
-    public void setCuentas(String[] cuentas) {
-        for (int i=0;i<=cuentas.length;i++){
+        for (int i=0;i<cuentas.length && i < 3; i++){
             this.cuentas[i]=cuentas[i];
+            this.numCuentas++;
+        }
+    }
+    public Persona(String dni){
+        this.dni=dni;
+    }
+    /*Gets*/
+    public String getDni() {
+        return dni;
+    }
+
+    public Cuenta[] getCuentas() {
+        return cuentas;
+    }
+
+    public int getNumCuentas() {
+        return numCuentas;
+    }
+/*Sets*/
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setCuentas(Cuenta[] cuentas) {
+        this.numCuentas=0;
+        for (int i=0;i<cuentas.length && i < 3; i++){
+            this.cuentas[i]=cuentas[i];
+            this.numCuentas++;
         }
     }
 
-    public float[] getSaldos() {return saldos;}
-
-    public void setSaldos(float[] saldos) {
-        for (int i=0;i<=saldos.length;i++){
-            saldos[i]=this.saldos[i];
+    public void setNumCuentas(int numCuentas) {
+        if (numCuentas >= 0 && numCuentas <= 3) {
+            this.numCuentas = numCuentas;
         }
     }
-
-    public String getDni() {return dni;}
-
-    public void setDni(String dni){
-        if (dni.length()!=8 && !checkDNI(dni)){
-
-            System.out.println("El dni no es correcto, se cambiara por uno que cumpla las condiciones");
-            this.dni="62438519K";
-        }else {
-            this.dni=dni;
-        }
-    }
-
-    public static boolean checkDNI (String dni) {
-        dni.toUpperCase();
-
-        char[] numerosDni=dni.substring(0,8).toCharArray();
-        char[] letraDni=dni.substring(8).toCharArray();
-        char[] letras;
-        letras = new char[] {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
-        int resto=0;
-        int numeros=0;
-
-        for (int i=0;i>=numerosDni.length;i++){
-            numeros=numeros*10+numerosDni[i];
-        }
-        //mirar como pasar el String con los números del dni, a entero
-        resto=numeros%23;
-        if (letraDni[0]==letras[resto]){
-            System.out.println("El dni es correcto");
-            return true;
-        }else {
-            System.out.println("El dni no es correcto");
-            return false;
-        }
-    }
-
-    public void moroso(float[] saldo){
-        for (int i=0;i<=saldo.length;i++){
-            if (saldo[i]<0){
-                System.out.println("Alerta, esta persona es morosa");
+/*Morosa*/
+    public boolean esMorosa(){
+        for (int i=0;i<numCuentas;i++){
+            if (cuentas[i].getSaldo()<0){
+                return true;
             }
         }
+        return false;
     }
-    public Persona (){
-        this.cuentas= new String[]{"AV5243159875662154121515", "PL2431673421543245767456", "GH1346724659672457575576"};
-        this.saldos = new float[]{613.54f, -1545.11f, 44.00f};
-        this.dni="62438519K";
+/*Añadir Cuenta*/
+    public void añadirCuenta(Cuenta cuenta) {
+        if (numCuentas < 3) {
+            cuentas[numCuentas] = cuenta;
+            numCuentas++;
+            System.out.println("Cuenta añadida. Total de cuentas: " + numCuentas);
+        } else {
+            System.out.println("No puedes tener más de 3 cuentas");
+        }
     }
-    public Persona (String[] cuentas,String dni, float[] saldos){
-        this.cuentas=cuentas;
-        this.dni=dni;
-        this.saldos=saldos;
+/*Buscar persona*/
+    public static Persona buscarPersona(String dni) {
+        for (int i = 0; i < PruebaCuentas.numPersonas; i++) {
+            if (PruebaCuentas.personas[i].getDni().equals(dni)) {
+                return PruebaCuentas.personas[i];
+            }
+        }
+        return null;
+    }
+/*Buscar Cuenta*/
+    public Cuenta buscarCuenta(String numeroCuenta) {
+        for (int i = 0; i < numCuentas; i++) {
+            if (cuentas[i].getNumeroCuenta().equals(numeroCuenta)) {
+                return cuentas[i];
+            }
+        }
+        return null;
+    }
+/*Mostrar datos*/
+    public void mostrarDatos() {
+        System.out.println("\n--- DATOS DE LA PERSONA ---");
+        System.out.println("DNI: " + dni);
+        System.out.println("Numero de cuentas: " + numCuentas);
+
+        for (int i = 0; i < numCuentas; i++) {
+            System.out.println("Cuenta " + (i + 1) + ": " +
+                    cuentas[i].getNumeroCuenta() +
+                    " - Saldo: " + cuentas[i].getSaldo() + " euros");
+        }
+
+        if (esMorosa()) {
+            System.out.println("ESTADO: MOROSA (tiene deudas)");
+        } else {
+            System.out.println("ESTADO: Al corriente de pagos");
+        }
+        System.out.println("---------------------------\n");
     }
 }
