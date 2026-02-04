@@ -4,6 +4,7 @@ public class Usuarios {
     private String nombre;
     private int edad;
 
+
     public Usuarios(){
         this.edad=20;
         this.nombre="Manolo";
@@ -21,12 +22,17 @@ public class Usuarios {
         return nombre;
     }
 
-
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("Nombre: "+ nombre);
+        System.out.println("Edad:   "+ edad);
+        return "";
     }
 }
