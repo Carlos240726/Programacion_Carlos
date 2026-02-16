@@ -1,9 +1,9 @@
-package Tema5;
+package Tema5.Compra;
 
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
-public class Tema5Ejercicio1 {
+public class CompraEjercicio1 {
     public static void main(String[] args){
     LinkedHashSet <String> listaCompra = new LinkedHashSet<>();
     Scanner in = new Scanner(System.in);
