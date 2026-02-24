@@ -46,8 +46,6 @@ public class ExcepcionesEjercicio5 {
             System.err.println("Error: " + e.getMessage());
         } catch (InputMismatchException e) {
             System.err.println("Error: Debes introducir un número entero");
-        } finally {
-            in.close();
         }
     }
 }
