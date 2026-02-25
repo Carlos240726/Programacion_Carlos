@@ -1,6 +1,6 @@
 package Tema6.Red_Social;
 
-public class PublicacionVideo implements IPublicacion, IAbrirPublicacion{
+public class PublicacionVideo implements IPublicacion, IAbrirPublicacion, IReaccion{
     @Override
     public void compartir() {
         System.out.println("Se ha compartido el video");
@@ -13,5 +13,10 @@ public class PublicacionVideo implements IPublicacion, IAbrirPublicacion{
 
     public void abrir(){
         System.out.println("Se ha abierto la publicacion");
+    }
+
+    @Override
+    public void comentar() {
+        System.out.println("Comentario enviado");
     }
 }

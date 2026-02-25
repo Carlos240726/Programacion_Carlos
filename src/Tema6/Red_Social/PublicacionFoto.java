@@ -1,6 +1,6 @@
 package Tema6.Red_Social;
 
-public class PublicacionFoto implements IPublicacion,IAbrirPublicacion{
+public class PublicacionFoto implements IPublicacion,IAbrirPublicacion, IReaccion{
     @Override
     public void publicar() {
         System.out.println("Se ha publicado la foto");
@@ -12,5 +12,10 @@ public class PublicacionFoto implements IPublicacion,IAbrirPublicacion{
     }
     public void abrir(){
         System.out.println("Se ha abierto la publicacion");
+    }
+
+    @Override
+    public void comentar() {
+        System.out.println("Comentario enviado");
     }
 }
