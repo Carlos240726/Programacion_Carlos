@@ -75,6 +75,7 @@ public class Ordena_Archivos {
                 bw.write(lineas[i]);
                 bw.newLine();
             }
+            //mostrar el archivo ordenado
         }catch (IOException ioe){
             ioe.printStackTrace();
         }

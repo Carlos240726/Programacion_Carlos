@@ -1,4 +1,4 @@
-package Tema7.serializacion;
+package Tema7.serializacionAna;
 
 public class Uso {
     public static void main(String[] args) {

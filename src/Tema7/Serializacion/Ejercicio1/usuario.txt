@@ -1,0 +1,2 @@
+Nombre: manolo
+Edad: 23

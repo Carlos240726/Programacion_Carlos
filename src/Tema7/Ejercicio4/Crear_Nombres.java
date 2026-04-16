@@ -50,6 +50,7 @@ public class Crear_Nombres {
                 bw.write(nombreCompleto);
                 bw.newLine();
             }
+            //mostrar archivo con los nombres
         }catch (IOException ioe){
             ioe.printStackTrace();
         }

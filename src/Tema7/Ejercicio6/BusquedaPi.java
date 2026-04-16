@@ -25,6 +25,7 @@ public class BusquedaPi {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+        //pi.contains(valor)
 
         for (int i = 0; i <= pi.length() - valor.length(); i++) {
             boolean coincide = true;
