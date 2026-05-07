@@ -1,7 +1,5 @@
 package Tema8.Hogwarts.EntidadConsulta;
 
-import java.sql.*;
-
 public class Asignatura {
     private int id_asignatura;
     private String nombre;
